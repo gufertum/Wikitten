@@ -34,6 +34,10 @@ if (!defined('ENABLE_EDITING')) {
     define('ENABLE_EDITING', false);
 }
 
+if(!defined('ENABLE_CREATING')) {
+    define('ENABLE_CREATING', false);
+}
+
 if (!defined('ENABLE_PASTEBIN')) {
     define('ENABLE_PASTEBIN', false);
 }

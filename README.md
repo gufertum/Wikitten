@@ -1,5 +1,10 @@
-Wikitten
-========
+# Wikitten
+
+## Fork info
+Forked by me to make some minor improvemtens and to adapt it to my liking.
+Full credits go to the original author @ [victorstanciu/Wikitten](https://github.com/victorstanciu/Wikitten)
+
+## Original readme
 
 Wikitten is a small, fast, PHP wiki, and the perfect place to store your notes, code snippets, ideas, etc.
 

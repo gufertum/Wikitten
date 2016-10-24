@@ -450,13 +450,13 @@ class Wiki
         //remove the DOMAIN_SUBDIR in case it is set to get a valid path
         if (DOMAIN_SUBDIR != '')
         {
-            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR) {
-                $fullpath = substr($fullpath, strlen(DOMAIN_SUBDIR));
+            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR . "/") {
+                $page = substr($fullpath, strlen(DOMAIN_SUBDIR . "/"));
             }
         }
         
-        $filepath   = LIBRARY . $fullpath;
-        $content    = "# " . htmlspecialchars($fullpath, ENT_QUOTES, 'UTF-8');
+        $filepath   = LIBRARY . "/" . $page;
+        $content    = "# " . htmlspecialchars($page, ENT_QUOTES, 'UTF-8');
 
         // if feature not enabled, go to 404
         if (!ENABLE_CREATING || file_exists($filepath)) $this->_404();

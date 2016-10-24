@@ -451,7 +451,8 @@ class Wiki
         if (DOMAIN_SUBDIR != '')
         {
             if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR) {
-            $fullpath = substr($fullpath, strlen(DOMAIN_SUBDIR));
+                $fullpath = substr($fullpath, strlen(DOMAIN_SUBDIR));
+            }
         }
         
         $page       = str_replace("###" . APP_DIR . "/", "", "###" . $fullpath);

@@ -445,20 +445,29 @@ class Wiki
     public function createAction()
     {
         $request    = parse_url($_SERVER['REQUEST_URI']);
-        $page       = str_replace("###" . APP_DIR . "/", "", "###" . urldecode($request['path']));
+        $fullpath   = urldecode($request['path']);
         
-        $filepath   = LIBRARY . urldecode($request['path']);
+        //remove the DOMAIN_SUBDIR in case it is set to get a valid path
+        if (DOMAIN_SUBDIR != '')
+        {
+            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR) {
+            $fullpath = substr($fullpath, strlen(DOMAIN_SUBDIR));
+        }
+        
+        $page       = str_replace("###" . APP_DIR . "/", "", "###" . $fullpath);
+        $filepath   = LIBRARY . $fullpath;
         $content    = "# " . htmlspecialchars($page, ENT_QUOTES, 'UTF-8');
 
         // if feature not enabled, go to 404
         if (!ENABLE_CREATING || file_exists($filepath)) $this->_404();
 
-
         // Create subdirectory recursively, if neccessary
-        mkdir(dirname($filepath), 0755, true);
+        mkdir(dirname($filepath), 0775, true);
         
         // Save default content, and redirect back to the new page
         file_put_contents($filepath, $content);
+        // Make the file group writeable
+        chmod($filepath, 0664);
 
         if (file_exists($filepath))
         {

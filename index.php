@@ -14,6 +14,10 @@ if (!defined('LIBRARY')) {
     define('LIBRARY', __DIR__ . DIRECTORY_SEPARATOR . 'library');
 }
 
+if (!defined('DOMAIN_SUBDIR')) {
+    define('DOMAIN_SUBDIR', '');
+}
+
 if (!defined('DEFAULT_FILE')) {
     define('DEFAULT_FILE', 'index.md');
 }

@@ -447,8 +447,8 @@ class Wiki
         $request    = parse_url($_SERVER['REQUEST_URI']);
         $page       = urldecode($request['path']);
         
-        //remove the DOMAIN_SUBDIR in case it is set to get a valid path
-        if (DOMAIN_SUBDIR != '')
+        //remove the APP_DIR in case it is set to get a valid path
+        if (APP_DIR != '')
         {
             if (substr($page, 0, strlen(APP_DIR . "/")) == APP_DIR . "/")
                 $page = substr($page, strlen(APP_DIR . "/"));

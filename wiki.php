@@ -448,15 +448,14 @@ class Wiki
         $fullpath   = urldecode($request['path']);
         
         //remove the DOMAIN_SUBDIR in case it is set to get a valid path
-        if (DOMAIN_SUBDIR != '')
+        if (APP_DIR != '')
         {
-            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR) {
-                $fullpath = substr($fullpath, strlen(DOMAIN_SUBDIR));
+            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == "/".APP_DIR) {
+                $page = substr($fullpath, strlen("/".APP_DIR));
             }
         }
         
-        $page       = str_replace("###" . APP_DIR . "/", "", "###" . $fullpath);
-        $filepath   = LIBRARY . $fullpath;
+        $filepath   = LIBRARY . $page;
         $content    = "# " . htmlspecialchars($page, ENT_QUOTES, 'UTF-8');
 
         // if feature not enabled, go to 404

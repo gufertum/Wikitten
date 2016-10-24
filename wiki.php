@@ -445,13 +445,13 @@ class Wiki
     public function createAction()
     {
         $request    = parse_url($_SERVER['REQUEST_URI']);
-        $fullpath   = urldecode($request['path']);
+        $page   = urldecode($request['path']);
         
         //remove the DOMAIN_SUBDIR in case it is set to get a valid path
         if (DOMAIN_SUBDIR != '')
         {
-            if (substr($fullpath, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR . "/") {
-                $page = substr($fullpath, strlen(DOMAIN_SUBDIR . "/"));
+            if (substr($page, 0, strlen(DOMAIN_SUBDIR)) == DOMAIN_SUBDIR . "/") {
+                $page = substr($page, strlen(DOMAIN_SUBDIR . "/"));
             }
         }
         

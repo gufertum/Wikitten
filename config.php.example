@@ -11,9 +11,6 @@ define('DEFAULT_FILE', 'index.md');
 // Custom path to your wiki's library:
 // define('LIBRARY', '/path/to/wiki/library');
 
-// In case the wiki is not installed in the root, add the domain subdir. it must start with a slash end end without
-// define('DOMAIN_SUBDIR', '/public');
-
 // Enable editing files through the interface?
 // NOTE: There's currently no authentication built into Wikitten, controlling
 // who does what is your responsibility.

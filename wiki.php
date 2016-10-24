@@ -73,7 +73,8 @@ class Wiki
                         . "<input type='submit' class='btn btn-primary' value='Create this page' />"
                         . "</form>"
                     ,
-                    'is_dir'    => false
+                    'is_dir'    => false,
+										'use_pastebin' => false 
                 ));            
             }        
         } else {

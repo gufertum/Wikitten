@@ -19,6 +19,12 @@ define('DEFAULT_FILE', 'index.md');
 // Enable create file if not exists
 // define('ENABLE_CREATING', true);
 
+// Permissions for newly created files
+// define('NEW_FILE_CHMOD', 0664);
+
+// User owning the newly created files
+// define('NEW_FILE_CHOWN', 'www-data');
+
 // Enable regarding file without extension as markdown?
 // define('MAKE_MARKDOWN_DEFAULT', true);
 

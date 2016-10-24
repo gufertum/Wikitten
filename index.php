@@ -38,6 +38,14 @@ if(!defined('ENABLE_CREATING')) {
     define('ENABLE_CREATING', false);
 }
 
+if(!defined('NEW_FILE_CHMOD')) {
+    define('NEW_FILE_CHMOD', 0664);
+}
+
+if(!defined('NEW_FILE_CHOWN')) {
+    define('NEW_FILE_CHOWN', "www-data");
+}
+
 if (!defined('ENABLE_PASTEBIN')) {
     define('ENABLE_PASTEBIN', false);
 }

@@ -466,8 +466,8 @@ class Wiki
         // Save default content, and redirect back to the new page
         file_put_contents($filepath, $content);
         // Make the file group writeable
-        chmod($filepath, 0664);
-        chown($filepath, "tum");
+        chmod($filepath, NEW_FILE_CHMOD);
+        chown($filepath, NEW_FILE_CHOWN);
 
         if (file_exists($filepath))
         {

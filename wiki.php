@@ -467,6 +467,7 @@ class Wiki
         file_put_contents($filepath, $content);
         // Make the file group writeable
         chmod($filepath, 0664);
+        chown($filepath, "tum");
 
         if (file_exists($filepath))
         {
